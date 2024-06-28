@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle O'yini - Uzbek</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>So'zlar</h1>
+    <div id="game">
+        <div id="board"></div>
+        <div id="keyboard"></div>
+        <button id="restart-btn">Restart</button>
+        <div id="alert-box" class="alert-box"></div>
+    </div>
+    <div id="explanation" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>O'yin Qoidalari</h2>
+            <p>Wordle o'yinida siz 5 harfli so'zni topishingiz kerak. Har bir urinishdan keyin harflar rang bilan belgilanadi:</p>
+            <ul>
+                <li><span class="correct">To'g'ri</span> - To'g'ri harf to'g'ri joyda.</li>
+                <li><span class="present">Bor</span> - To'g'ri harf noto'g'ri joyda.</li>
+                <li><span class="absent">Yo'q</span> - Bu harf so'zda yo'q.</li>
+            </ul>
+            <h3>Namuna:</h3>
+            <div id="demo-board-step1" class="demo-board"></div>
+            <p>"guruh" - "h" harfi to'g'ri joyda emas, shuning uchun u kulrang.</p>
+            <div id="demo-board-step2" class="demo-board"></div>
+            <p>"domla" - "o" harfi to'g'ri joyda emas, lekin mavjud, shuning uchun u sariq.</p>
+            <div id="demo-board-step3" class="demo-board"></div>
+            <p>"salom" - "s", "a", "l", "o", "m" to'g'ri joyda, shuning uchun ular yashil.</p>
+            <button id="play-btn" class="play-btn">O'ynash</button>
+        </div>
+    </div>
+    <script src="words.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
