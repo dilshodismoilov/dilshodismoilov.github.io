@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   secretWord = wordsList[Math.floor(Math.random() * wordsList.length)];
   initializeBoard();
   initializeKeyboard();
-  document.getElementById('restart-btn').addEventListener('click', () => location.reload());
+  //document.getElementById('restart-btn').addEventListener('click', () => location.reload());
   showExplanation();
   document.addEventListener('keydown', handleKeydown);
 });
@@ -48,25 +48,31 @@ function initializeKeyboard() {
 
   // Add Backspace key
   const backspaceRow = document.createElement('div');
-  backspaceRow.classList.add('row');
+  backspaceRow.classList.add('row-special');
+  const enterKey = document.createElement('div');
+  enterKey.classList.add('key');
+  enterKey.textContent = '↵';
+  enterKey.id = 'key-enter';
+  backspaceRow.appendChild(enterKey);
+  enterKey.addEventListener('click', handleSubmit);
+
   const backspaceKey = document.createElement('div');
-  backspaceKey.classList.add('key', 'backspace-key');
+  backspaceKey.classList.add('key');
   backspaceKey.innerHTML = '&#9003;';
   backspaceKey.id = 'key-backspace';
   backspaceRow.appendChild(backspaceKey);
   keyboard.appendChild(backspaceRow);
   backspaceKey.addEventListener('click', handleDelete);
-
   // Add Enter key
-  const enterRow = document.createElement('div');
-  enterRow.classList.add('row');
-  const enterKey = document.createElement('div');
-  enterKey.classList.add('key', 'special-key');
-  enterKey.textContent = 'Enter';
-  enterKey.id = 'key-enter';
-  enterRow.appendChild(enterKey);
-  keyboard.appendChild(enterRow);
-  enterKey.addEventListener('click', handleSubmit);
+  //const enterRow = document.createElement('div');
+  //enterRow.classList.add('row');
+  //   const enterKey = document.createElement('div');
+  //   enterKey.classList.add('key', 'special-key');
+  //   enterKey.textContent = 'Enter';
+  //   enterKey.id = 'key-enter';
+  //   backspaceRow.appendChild(enterKey);
+  //   //keyboard.appendChild(enterRow);
+  //   enterKey.addEventListener('click', handleSubmit);
 }
 
 function handleKeydown(event) {
@@ -239,12 +245,12 @@ function showExplanation() {
   modal.style.display = 'block';
 }
 
-function restartGame() {
-  secretWord = wordsList[Math.floor(Math.random() * wordsList.length)];
-  currentAttempt = 0;
-  currentLetter = 0;
-  initializeBoard();
-  initializeKeyboard();
-  document.addEventListener('keydown', handleKeydown);
-  showAlert("Yangi o'yin boshlandi!");
-}
+// function restartGame() {
+//   secretWord = wordsList[Math.floor(Math.random() * wordsList.length)];
+//   currentAttempt = 0;
+//   currentLetter = 0;
+//   initializeBoard();
+//   initializeKeyboard();
+//   document.addEventListener('keydown', handleKeydown);
+//   showAlert("Yangi o'yin boshlandi!");
+// }

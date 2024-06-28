@@ -214,24 +214,29 @@ h1 {
     background-color: #45a049;
 }
 
+.row-special {
+    display: flex;
+    gap: 200px;
+}
+
 @media (max-width: 600px) {
     #board, .demo-board {
-        grid-template-columns: repeat(5, 40px);
+        grid-template-columns: repeat(5, 60px);
     }
     .cell {
-        width: 40px;
-        height: 40px;
+        width: 60px;
+        height: 60px;
         font-size: 18px;
     }
     .key {
         width: 30px;
-        height: 30px;
-        font-size: 14px;
+        height: 40px;
+        font-size: 16px;
     }
     .special-key, .backspace-key {
         width: auto;
         padding: 0 8px;
-        font-size: 14px;
+        font-size: 16px;
     }
     .modal-content {
         width: 90%;
