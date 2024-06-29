@@ -5,8 +5,24 @@ let currentLetter = 0;
 let gameFinished = false;
 const uzbekAlphabet = "q e r t y u i o p a s d f g h j k l z x v b n m sh ch o' g'".split('');
 
+// Define the start date
+const startDate = new Date('2024-06-29'); // Replace 'YYYY-MM-DD' with your start date
+
+// Get the current date
+const currentDate = new Date();
+
+// Calculate the difference in time (in milliseconds)
+const timeDifference = currentDate - startDate;
+
+// Convert the time difference from milliseconds to days
+const daysPassed = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+const title = document.getElementById('title');
+title.innerHTML += ` #${daysPassed + 1}`;
+console.log(`Days passed since start date: ${daysPassed}`);
+
 document.addEventListener('DOMContentLoaded', () => {
-  secretWord = wordsList[Math.floor(Math.random() * wordsList.length)];
+  //secretWord = wordsList[Math.floor(Math.random() * wordsList.length)];
+  secretWord = wordsList[daysPassed];
   initializeBoard();
   initializeKeyboard();
   //document.getElementById('restart-btn').addEventListener('click', () => location.reload());
@@ -141,10 +157,12 @@ function handleSubmit() {
           break;
       }
       gameFinished = true;
+      showStatistics();
       document.removeEventListener('keydown', handleKeydown);
     } else if (currentAttempt === attempts) {
       showAlert(`Siz yutqazdingiz! So'z: ${secretWord}`);
       gameFinished = true;
+      showStatistics();
       document.removeEventListener('keydown', handleKeydown);
     }
   } else {
@@ -171,6 +189,7 @@ function revealWord(guess) {
   for (let i = 0; i < 5; i++) {
     if (guessChars[i] !== ' ' && secretWordChars.includes(guessChars[i])) {
       statuses[i] = 0;
+      secretWordChars[secretWordChars.indexOf(guessChars[i])] = ' ';
     }
   }
 
@@ -283,6 +302,40 @@ function showExplanation() {
   }
 
   modal.style.display = 'block';
+}
+
+function showStatistics() {
+  const statsModal = document.getElementById('stats-modal');
+  const statsText = document.getElementById('stats-text');
+  const timer = document.getElementById('timer');
+  const statsCloseBtn = document.getElementById('stats-close-btn');
+
+  statsCloseBtn.addEventListener('click', () => (statsModal.style.display = 'none'));
+
+  // Dummy data for demonstration
+  const totalPlayers = 100;
+  const successfulPlayers = 50;
+  const nextGameTime = new Date();
+  nextGameTime.setHours(24, 0, 0, 0); // Next midnight
+
+  statsText.textContent = `${successfulPlayers} / ${totalPlayers}`;
+
+  const percentage = (successfulPlayers / totalPlayers) * 100;
+  document.documentElement.style.setProperty('--percentage', `${percentage}%`);
+
+  function updateTimer() {
+    const now = new Date();
+    const diff = nextGameTime - now;
+    const hours = Math.floor(diff / 1000 / 60 / 60);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    timer.textContent = `${hours}:${minutes}:${seconds}`;
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+
+  statsModal.style.display = 'flex';
 }
 
 // function restartGame() {

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>So'zlar</h1>
+    <h1 id="title">So'zlar</h1>
     <div id="game">
         <div id="board"></div>
         <div id="keyboard"></div>
@@ -26,12 +26,25 @@
             </ul>
             <h3>Namuna:</h3>
             <div id="demo-board-step1" class="demo-board"></div>
-            <p>"guruh" - "h" harfi to'g'ri joyda emas, shuning uchun u kulrang.</p>
+            <p>"h" harfi to'g'ri joyda emas, shuning uchun u kulrang.</p>
             <div id="demo-board-step2" class="demo-board"></div>
-            <p>"domla" - "o" harfi to'g'ri joyda emas, lekin mavjud, shuning uchun u sariq.</p>
+            <p>"o" harfi to'g'ri joyda emas, lekin mavjud, shuning uchun u sariq.</p>
             <div id="demo-board-step3" class="demo-board"></div>
-            <p>"salom" - "s", "a", "l", "o", "m" to'g'ri joyda, shuning uchun ular yashil.</p>
+            <p>"s", "a", "l", "o", "m" to'g'ri joyda, shuning uchun ular yashil.</p>
             <button id="play-btn" class="play-btn">Boshladik</button>
+        </div>
+    </div>
+      <!-- Modal for Statistics -->
+    <div id="stats-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="stats-close-btn">&times;</span>
+            <h2>O'yin Statistikalari</h2>
+            <div class="circular-chart">
+                <div class="circle" id="circle">
+                    <span id="stats-text"></span>
+                </div>
+            </div>
+            <p>Yangi o'yinga qadar vaqt: <span id="timer"></span></p>
         </div>
     </div>
     <script src="words.js"></script>
