@@ -88,7 +88,8 @@ h1 {
 
 .row {
     display: flex;
-    gap: 2px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .key {
@@ -212,11 +213,6 @@ h1 {
 
 .play-btn:hover {
     background-color: #45a049;
-}
-
-.row-special {
-    display: flex;
-    gap: 200px;
 }
 
 @media (max-width: 600px) {

@@ -2,6 +2,7 @@ let secretWord;
 const attempts = 6;
 let currentAttempt = 0;
 let currentLetter = 0;
+let gameFinished = false;
 const uzbekAlphabet = "q e r t y u i o p a s d f g h j k l z x v b n m sh ch o' g'".split('');
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,9 +29,9 @@ function initializeBoard() {
 function initializeKeyboard() {
   const keyboard = document.getElementById('keyboard');
   const rows = [
-    'Q E R T Y U I O P'.split(' '),
+    'Q SH E R T Y U I O P'.split(' '),
     'A S D F G H J K L'.split(' '),
-    "Z X V B N M O' G' CH SH".split(' '),
+    "Z X CH V B N M O' G'".split(' '),
   ];
   rows.forEach((row) => {
     const rowDiv = document.createElement('div');
@@ -48,13 +49,7 @@ function initializeKeyboard() {
 
   // Add Backspace key
   const backspaceRow = document.createElement('div');
-  backspaceRow.classList.add('row-special');
-  const enterKey = document.createElement('div');
-  enterKey.classList.add('key');
-  enterKey.textContent = '↵';
-  enterKey.id = 'key-enter';
-  backspaceRow.appendChild(enterKey);
-  enterKey.addEventListener('click', handleSubmit);
+  backspaceRow.classList.add('row');
 
   const backspaceKey = document.createElement('div');
   backspaceKey.classList.add('key');
@@ -63,6 +58,13 @@ function initializeKeyboard() {
   backspaceRow.appendChild(backspaceKey);
   keyboard.appendChild(backspaceRow);
   backspaceKey.addEventListener('click', handleDelete);
+
+  const enterKey = document.createElement('div');
+  enterKey.classList.add('key');
+  enterKey.textContent = '↵';
+  enterKey.id = 'key-enter';
+  backspaceRow.appendChild(enterKey);
+  enterKey.addEventListener('click', handleSubmit);
   // Add Enter key
   //const enterRow = document.createElement('div');
   //enterRow.classList.add('row');
@@ -87,7 +89,7 @@ function handleKeydown(event) {
 }
 
 function handleInput(key) {
-  if (currentLetter < 5) {
+  if (currentLetter < 5 && !gameFinished) {
     const cell = document.getElementById(`cell-${currentAttempt}-${currentLetter}`);
     cell.textContent = key.toUpperCase();
     currentLetter++;
@@ -118,10 +120,31 @@ function handleSubmit() {
     currentAttempt++;
     currentLetter = 0;
     if (guessWord === secretWord) {
-      showAlert('Tabriklaymiz! Siz topdingiz!');
+      switch (currentAttempt) {
+        case 1:
+          showAlert('Dono');
+          break;
+        case 2:
+          showAlert('Ajoyib');
+          break;
+        case 3:
+          showAlert("Zo'r");
+          break;
+        case 4:
+          showAlert('Yaxshi');
+          break;
+        case 5:
+          showAlert('Tasanno');
+          break;
+        case 6:
+          showAlert('Vuhhh..');
+          break;
+      }
+      gameFinished = true;
       document.removeEventListener('keydown', handleKeydown);
     } else if (currentAttempt === attempts) {
       showAlert(`Siz yutqazdingiz! So'z: ${secretWord}`);
+      gameFinished = true;
       document.removeEventListener('keydown', handleKeydown);
     }
   } else {
@@ -134,6 +157,23 @@ function revealWord(guess) {
   const secretWordChars = wordIntoArrayOfUzbLetters(secretWord);
   //console.log(guessChars);
   //console.log(secretWordChars);
+  const statuses = [-1, -1, -1, -1, -1];
+  // check for correct first
+  for (let i = 0; i < 5; i++) {
+    if (guessChars[i] === secretWordChars[i]) {
+      statuses[i] = 1;
+      guessChars[i] = ' ';
+      secretWordChars[i] = ' ';
+    }
+  }
+
+  // check for present
+  for (let i = 0; i < 5; i++) {
+    if (guessChars[i] !== ' ' && secretWordChars.includes(guessChars[i])) {
+      statuses[i] = 0;
+    }
+  }
+
   for (let i = 0; i < 5; i++) {
     const cell = document.getElementById(`cell-${currentAttempt}-${i}`);
     const key = document.getElementById(`key-${guess[i].toUpperCase()}`);
@@ -141,11 +181,11 @@ function revealWord(guess) {
       cell.classList.add('flip');
       setTimeout(() => {
         cell.classList.remove('flip');
-        if (guessChars[i] === secretWordChars[i]) {
+        if (statuses[i] === 1) {
           cell.classList.add('correct');
           key.classList.add('correct');
           key.classList.remove('present');
-        } else if (secretWordChars.includes(guessChars[i])) {
+        } else if (statuses[i] === 0) {
           cell.classList.add('present');
           if (!key.classList.contains('correct')) {
             key.classList.add('present');
