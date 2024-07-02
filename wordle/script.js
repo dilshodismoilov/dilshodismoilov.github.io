@@ -157,12 +157,14 @@ function handleSubmit() {
           break;
       }
       gameFinished = true;
-      showStatistics();
+
+      //showStatistics();
       document.removeEventListener('keydown', handleKeydown);
     } else if (currentAttempt === attempts) {
       showAlert(`Siz yutqazdingiz! So'z: ${secretWord}`);
       gameFinished = true;
-      showStatistics();
+      setTimeout(1200);
+      //showStatistics();
       document.removeEventListener('keydown', handleKeydown);
     }
   } else {
