@@ -74,6 +74,3 @@ foreach ($dealDirections as $direction => $count) {
     echo " - Направление $direction: $count сделок\n";
 }
 echo "Сумма значений поля 'Баллы' в Смарт процессе: $pointsSum\n";
-
-// Скриншот результата
-file_put_contents('results.txt', ob_get_contents());
