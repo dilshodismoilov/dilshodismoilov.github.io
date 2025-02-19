@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Ensure that the RewriteBase matches your project folder
+RewriteBase /train/
+
+# Redirect all requests to index.php if the file or folder doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

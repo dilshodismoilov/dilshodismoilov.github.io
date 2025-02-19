@@ -1,0 +1,172 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Container */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to right, #007BFF, #0056b3);
+    color: white;
+    padding: 20px;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+#station-search {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+#autocomplete-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ddd;
+    color: black;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 0 0 8px 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#autocomplete-results .autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#autocomplete-results .autocomplete-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Station List Section */
+.station-list-section {
+    padding: 30px 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1800px;
+    border-radius: 8px;
+}
+
+.station-list-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Alphabetical Station List */
+.alphabetical-station-list {
+    padding: 0px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 3500px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.alphabetical-station-list li {
+    max-width: 200px;
+}
+@media (max-width: 1100px) {
+    .alphabetical-station-list {
+        height: 8000px;
+        padding: 0px 10px;
+    }
+}
+@media (max-width: 700px) {
+    .alphabetical-station-list {
+        height: 10000px;
+        gap: 10;
+        padding: 0px 10px;
+    }
+    .alphabetical-station-list li {
+        max-width: 150px;
+    }
+}
+
+.letter-group {
+    margin-bottom: 20px;
+}
+
+.letter-heading {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #007BFF;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.station-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.station-list li {
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.station-list li a {
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+.station-list li a:hover {
+    color: #0056b3;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: #f1f1f1;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.footer p {
+    font-size: 0.9rem;
+    color: #555;
+}
