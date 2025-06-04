@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container {
+
+}
+.img-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+}
+img {
+    display: block;
+    width: min(70vw,1000px);
+    height: auto;
+}
+
+.number {
+    position: absolute;
+
+    background-color: red;
+    color: white;
+
+    font-size: 1.75rem;
+
+    width: min(5%, 1.5em);
+    aspect-ratio: 1;
+
+    display: grid;
+    place-content: center;
+}
