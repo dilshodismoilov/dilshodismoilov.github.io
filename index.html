@@ -3,17 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RWL - Image</title>
+    <title>Diagram - Main</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div class="container">
-        <div class="img-container">
-            <img src="images/construction.png" alt="">
+        <div id="calls-income" class="block block--rounded">
+            <p class="block__title">поступило вызовов</p>
+            <p class="block__value">1000</p>
+        </div>
+        <div id="second" class="block block--no-border">
+            <p class="block__title">вторичные</p>
+            <p class="block__value">800</p>
+        </div>
+        <div id="first" class="block block--no-border">
+            <p class="block__title">первичные</p>
+            <p class="block__value">200</p>
+        </div>
+        <!-- робот аларм -->
+        <div id="robot-alarm-left" class="block block--rect text-center">
+            <p class="block__title">робот Аларм</p>
+        </div>
+        <div id="info-robot-alarm-left" class="block block--rect">
+            <p class="block__title">
+                отработано звонков <span class="block__value">20</span>, из них
+            </p>
+            <p class="block__title block__title--light">
+                заявка создана <span class="block__value">20</span>
+            </p>
+            <p class="block__title block__title--light">
+                заявка в работе <span class="block__value">20</span>
+            </p>
+            <p class="block__title block__title--light">
+                информирование о работе <span class="block__value">20</span>
+            </p>
+        </div>
+        <!-- Робот аларм -->
+        <div id="robot-alarm-right" class="block block--rect text-center">
+            <p class="block__title">робот Аларм</p>
+        </div>
+        <div id="info-robot-alarm-right" class="block block--rect">
+            <p class="block__title">
+                отработано звонков <span class="block__value">20</span>, из них
+            </p>
+            <p class="block__title block__title--light">
+                заявка создана <span class="block__value">20</span>
+            </p>
+            <p class="block__title block__title--light">
+                заявка в работе <span class="block__value">20</span>
+            </p>
+            <p class="block__title block__title--light">
+                информирование о работе <span class="block__value">20</span>
+            </p>
+        </div>
+        <div id="sub-info-robot-alarm-right" class="block block--rect">
+            <p class="block__title block__title--light">
+                превод на оператора <span class="block__value">20</span>
+            </p>
+        </div>
+        <!-- переход на IVR -->
+         <div id="IVR" class="block block--rect text-center">
+            <p class="block__title">переход на IVR</p>
+        </div>
+        <div id="button1" class="block block--no-border">
+            <p class="block__title">кнопка 1</p>
+            <p class="block__value">800</p>
+        </div>
+        <div id="button2" class="block block--no-border">
+            <p class="block__title">кнопка 2</p>
+            <p class="block__value">800</p>
+        </div>
+        <div id="no-buttons" class="block block--no-border">
+            <p class="block__title">ничего не нажали</p>
+            <p class="block__value">800</p>
+        </div>
+        <!-- Оператор КЦ -->
+         <div id="operator-call-center" class="block block--rect text-center">
+            <p class="block__title">оператор КЦ</p>
+        </div>
+        <div id="info-operator-call-center" class="block block--rect">
+            <div class="block__content">
+                <p class="block__title">
+                отработано звонков <span class="block__value">20</span>, из низ
+                </p>
+                <p class="block__title block__title--light">
+                    оператор ЗЭС<span class="block__value">20</span>
+                </p>
+                <p class="block__title block__title--light">
+                    диспетчер НГЭС <span class="block__value">20</span>
+                </p>
+            </div>
+            <div class="block__content">
+                <p class="block__title">
+                    принято звонков <span class="block__value">20</span>, из низ
+                </p>
+                <p class="block__title block__title--light">
+                    оператор ЗЭС<span class="block__value">20</span>
+                </p>
+                <p class="block__title block__title--light">
+                    диспетчер НГЭС <span class="block__value">20</span>
+                </p>
+            </div>
+            <div class="block__content">
+                <p class="block__title">
+                    создано заявок <span class="block__value">20</span>, из низ
+                </p>
+                <p class="block__title block__title--light">
+                    оператор ЗЭС<span class="block__value">20</span>
+                </p>
+                <p class="block__title block__title--light">
+                    диспетчер НГЭС <span class="block__value">20</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Aside -->
+        <div id="aside" class="block">
+            <p class="block__title block__title--light">
+                Поступило звонков <span class="block__value">20</span> шт.
+            </p>
+            <p class="block__title block__title--light">
+                Поступило звонков менее 5 сек. <span class="block__value">20</span> шт.
+            </p>
+            <p class="block__title block__title--light">
+                Ошибка <span class="block__value">20</span> (шт., % от общего)
+            </p>
+            <p class="block__title block__title--light">
+                Переведено на робота <span class="block__value">20</span> (шт., % от общего)
+            </p>
+            <p class="block__title block__title--light">
+                Отработано роботом <span class="block__value">20</span> (шт., % от переведенных)
+            </p>
+            <p class="block__title block__title--light">
+                Переведено на оператора <span class="block__value">20</span> (шт., % от общего)
+            </p>
+            <p class="block__title block__title--light">
+                Отработано оператором <span class="block__value">20</span> (шт., % от переведенных)
+            </p>
         </div>
     </div>
-    
-    <script src="main.js"></script>
 </body>
 </html>

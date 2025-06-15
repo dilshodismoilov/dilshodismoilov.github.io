@@ -1,35 +1,110 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
-
-}
-.img-container {
+    min-height: 100vh;
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    width: fit-content;
-    height: fit-content;
-}
-img {
-    display: block;
-    width: min(70vw,1000px);
-    height: auto;
+    font-size: 2vw;
 }
 
-.number {
+.block {
+    padding: .25rem .5rem;
     position: absolute;
+    border: 1px solid blue;
+}
+.block--rect {
+    min-width: 15%;
+}
+.text-center {
+    text-align: center;
+}
+.block__title {
+    font-weight: 600;
+}
+.block__title--light {
+    font-weight: 400;
+}
+.block__value {
+    text-decoration: underline;
+}
 
-    background-color: red;
-    color: white;
+.block--no-border {
+    border: none;
+    text-align: center;
+}
 
-    font-size: 1.75rem;
+.block--rounded {
+    border-radius: 20px;
+    text-align: center;
+}
 
-    width: min(5%, 1.5em);
-    aspect-ratio: 1;
+#aside {
+    right: 1.2%;
+    top: 12%;
+}
 
-    display: grid;
-    place-content: center;
+#calls-income {
+    left: 50%;
+    top: 11%;
+    transform: translate(-50%, 0);
+}
+
+#first {
+    top: 31%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#second {
+    top: 22.6%;
+    left: 35%;
+}
+#robot-alarm-left {
+    top: 43%;
+    left: 1.6%;
+    width: 19.8%;
+}
+#info-robot-alarm-left {
+    top: 52%;
+    left: 6.5%;
+}
+#robot-alarm-right {
+    top: 52%;
+    left: 23%;
+    width: 19.8%;
+}
+#info-robot-alarm-right {
+    top: 61%;
+    left: 26.7%;
+}
+#sub-info-robot-alarm-right {
+    top: 75%;
+    left: 26.7%;
+}
+#IVR {
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+#button1 {
+    top: 38.5%;
+    left: 35.6%;
+}
+#button2 {
+    top: 38.5%;
+    left: 59%;
+}
+#no-buttons {
+    top: 46%;
+    left: 50%;
+}
+#operator-call-center {
+    top: 50%;
+    left: 65%;
+}
+#info-operator-call-center {
+    top: 59%;
+    left: 69%;
 }
