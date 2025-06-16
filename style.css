@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border : 2px solid blue;
+}
+
 .container {
     min-height: 100vh;
     position: relative;
@@ -13,7 +17,9 @@
 .block {
     padding: .25rem .5rem;
     position: absolute;
+    z-index: 2;
     border: 1px solid blue;
+    background-color: white;
 }
 .block--rect {
     min-width: 15%;
@@ -41,70 +47,242 @@
     text-align: center;
 }
 
+.arrow-top-inline, .arrow-line-vertical, .arrow-line-horizontal, .arrow-left-bottom, .arrow-right-bottom {
+    position: absolute;
+    background: none;
+}
+
+.arrow-top-inline {
+    border-inline: var(--border);
+    border-top: var(--border);
+}
+
+.arrow-line-vertical {
+    border-left: var(--border);
+}
+.arrow-line-horizontal {
+    border-top: var(--border);
+}
+.arrow-left-bottom {
+    border-left: var(--border);
+    border-bottom: var(--border);
+}
+.arrow-right-bottom {
+    border-right: var(--border);
+    border-bottom: var(--border);
+}
+#a1 {
+    height: 15%;
+    width: 39%;
+    top: 25%;
+    left: 11%;
+}
+#a2 {
+    height: 8%;
+    width: 39%;
+    top: 42%;
+    left: 33%;
+}
+#a3 {
+    height: 7%;
+    width: 1%;
+    top: 18%;
+    left: 49.87%;
+}
+#a4 {
+    height: 1%;
+    width: 5%;
+    top: 67%;
+    left: 25%;
+}
+#a5 {
+    height: 12%;
+    width: 4%;
+    top: 44%;
+    left: 4%; 
+}
+#a6 {
+    height: 23%;
+    width: 3%;
+    top: 55%;
+    left: 25%; 
+}
+#a7 {
+    height: 33%;
+    width: 9%;
+    top: 45%;
+    left: 41%; 
+}
+#a8 {
+    height: 19%;
+    width: 3%;
+    top: 55%;
+    left: 66%; 
+}
+#a9 {
+    height: 1%;
+    width: 15%;
+    top: 53%;
+    left: 50%;
+}
 #aside {
     right: 1.2%;
     top: 12%;
+    height: 21%;
+    width: 26%;
 }
 
 #calls-income {
     left: 50%;
     top: 11%;
     transform: translate(-50%, 0);
+    height: 7%;
+    width: 16%;
 }
 
 #first {
     top: 31%;
     left: 50%;
     transform: translate(-50%, 0);
+    height: 7%;
+    width: 10%;
 }
 #second {
     top: 22.6%;
     left: 35%;
+    z-index: 10;
+    height: 5%;
+    width: 7%;
 }
 #robot-alarm-left {
-    top: 43%;
+    top: 40%;
     left: 1.6%;
     width: 19.8%;
+    height: 5%;
+}
+#robot-alarm-left::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 44.5%;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid blue;
 }
 #info-robot-alarm-left {
-    top: 52%;
+    top: 49%;
     left: 6.5%;
+    height: 15%;
+    width: 10%;
 }
 #robot-alarm-right {
-    top: 52%;
+    top: 50%;
     left: 23%;
     width: 19.8%;
+    height: 5%;
+}
+#robot-alarm-right::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 47.7%;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid blue;
 }
 #info-robot-alarm-right {
-    top: 61%;
+    top: 59%;
     left: 26.7%;
+    height: 15%;
+    width: 10%;
 }
 #sub-info-robot-alarm-right {
     top: 75%;
     left: 26.7%;
+    height: 5%;
+    width: 10%;
 }
 #IVR {
     top: 40%;
     left: 50%;
     transform: translate(-50%, 0);
+    height: 5%;
+    width: 10%;
+}
+#IVR::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 45.5%;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid blue;
 }
 #button1 {
     top: 38.5%;
     left: 35.6%;
+    height: 7%;
+    width: 6%;
 }
 #button2 {
     top: 38.5%;
     left: 59%;
+    height: 7%;
+    width: 6%;
 }
 #no-buttons {
     top: 46%;
     left: 50%;
+    height: 7%;
+    width: 10%;
 }
 #operator-call-center {
     top: 50%;
     left: 65%;
+    height: 5%;
+    width: 10%;
+}
+#operator-call-center::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 41.7%;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    
+    border-top: 10px solid blue;
+}
+#operator-call-center::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 100%;
+    top: 37.5%;
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    
+    border-left: 10px solid blue;
 }
 #info-operator-call-center {
     top: 59%;
     left: 69%;
+    height: 29%;
+    width: 10%;
 }
