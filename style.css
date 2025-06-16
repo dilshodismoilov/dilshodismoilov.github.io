@@ -6,6 +6,7 @@
 
 :root {
     --border : 2px solid blue;
+    --arrow-length: .65vw;
 }
 
 .container {
@@ -168,10 +169,10 @@
     left: 44.5%;
     width: 0; 
     height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: var(--arrow-length) solid transparent;
+    border-right: var(--arrow-length) solid transparent;
     
-    border-top: 10px solid blue;
+    border-top: var(--arrow-length) solid blue;
 }
 #info-robot-alarm-left {
     top: 49%;
@@ -193,10 +194,10 @@
     left: 47.7%;
     width: 0; 
     height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: var(--arrow-length) solid transparent;
+    border-right: var(--arrow-length) solid transparent;
     
-    border-top: 10px solid blue;
+    border-top: var(--arrow-length) solid blue;
 }
 #info-robot-alarm-right {
     top: 59%;
@@ -225,10 +226,10 @@
     left: 45.5%;
     width: 0; 
     height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: var(--arrow-length) solid transparent;
+    border-right: var(--arrow-length) solid transparent;
     
-    border-top: 10px solid blue;
+    border-top: var(--arrow-length) solid blue;
 }
 #button1 {
     top: 38.5%;
@@ -262,10 +263,10 @@
     left: 41.7%;
     width: 0; 
     height: 0; 
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
+    border-left: var(--arrow-length) solid transparent;
+    border-right: var(--arrow-length) solid transparent;
     
-    border-top: 10px solid blue;
+    border-top: var(--arrow-length) solid blue;
 }
 #operator-call-center::after {
     content: "";
@@ -275,10 +276,10 @@
     top: 37.5%;
     width: 0; 
     height: 0; 
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+    border-top: var(--arrow-length) solid transparent;
+    border-bottom: var(--arrow-length) solid transparent;
     
-    border-left: 10px solid blue;
+    border-left: var(--arrow-length) solid blue;
 }
 #info-operator-call-center {
     top: 59%;
