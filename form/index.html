@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <form 
+        action="https://cp.unisender.com/ru/subscribe?hash=6wojscuc76uroxtr3mprd9q3abfw77x7kfh7pxej9zrgstxzrxgco" 
+        method="POST" 
+        name="https://cp.unisender.com/ru/subscribe?hash=6wojscuc76uroxtr3mprd9q3abfw77x7kfh7pxej9zrgstxzrxgco"
+        class="form"
+    >
+        <div class="field">
+            <label for="f_1" class="field__label">Тип подписки</label>
+            <select name="f_1" id="f_1" class="select">
+                <option value="1" class="select__option">Агентство</option>
+                <option value="0" class="select__option" selected>Частное лицо</option>
+            </select>
+            <span class="select__arrow">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.91016 20.8766L15.4302 14.3566C16.2002 13.5866 16.2002 12.3266 15.4302 11.5566L8.91016 5.03659" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+        <div class="field">
+            <span class="field__label field__label--required">
+                Выберите город вылета и получайте подходящие туры и спецпредложения именно для вас
+            </span>
+            <div class="field__wrapper" data-error-msg="Хотя бы один элемент должен быть выбран" data-js-cities-wrapper>
+                <ul class="field__list" data-js-cities>
+                    <li class="field__item">
+                        <label for="city30" class="checkbox">
+                            <input type="checkbox" id="city30" name="list_ids[]" class="checkbox__control" value="30" data-js-checkbox>
+                            <span class="checkbox__label">из Москвы</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city31" class="checkbox">
+                            <input type="checkbox" id="city31" name="list_ids[]" class="checkbox__control" value="31" data-js-checkbox>
+                            <span class="checkbox__label">из Санкт-Петербурга</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city32" class="checkbox">
+                            <input type="checkbox" id="city32" name="list_ids[]" class="checkbox__control" value="32" data-js-checkbox>
+                            <span class="checkbox__label">из Казани</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city33" class="checkbox">
+                            <input type="checkbox" id="city33" name="list_ids[]" class="checkbox__control" value="33" data-js-checkbox>
+                            <span class="checkbox__label">из Самары</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city34" class="checkbox">
+                            <input type="checkbox" id="city34" name="list_ids[]" class="checkbox__control" value="34" data-js-checkbox>
+                            <span class="checkbox__label">из Екатеринбурга</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city35" class="checkbox">
+                            <input type="checkbox" id="city35" name="list_ids[]" class="checkbox__control" value="35" data-js-checkbox>
+                            <span class="checkbox__label">из Уфы</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city36" class="checkbox">
+                            <input type="checkbox" id="city36" name="list_ids[]" class="checkbox__control" value="36" data-js-checkbox>
+                            <span class="checkbox__label">из Сургута и Тюмени</span>
+                        </label>
+                    </li>
+                    <li class="field__item">
+                        <label for="city37" class="checkbox">
+                            <input type="checkbox" id="city37" name="list_ids[]" class="checkbox__control" value="37" data-js-checkbox>
+                            <span class="checkbox__label">из Минеральных Вод и Сочи</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>  
+        <div class="field">
+            <label for="email" class="field__label field__label--required">E-mail</label>
+            <div class="field__wrapper" data-error-msg="Обязательное поле" data-js-email-wrapper>
+                <input type="email" class="field__control" name="email" id="email" required data-js-email autocomplete="email">
+            </div>
+        </div>
+        <div class="field">
+            <div class="field__wrapper" data-error-msg="Обязательное поле" data-js-agreement-checkbox-wrapper>
+                <label for="agreement" class="checkbox">
+                    <input type="checkbox" id="agreement" class="checkbox__control" required data-js-agreement-checkbox>
+                    <span class="checkbox__label field__label--required">Я ознакомлен и согласен с правилами размещения и даю  <a href="https://www.ambotis.ru/about/politika-zashchity-i-obrabotki-personalnykh-dannykh/" class="field__link">согласие на обработку моих персональных данных</a></span>
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <button class="form__submit-button" type="submit" data-js-submit>Подписаться</button>  
+        </div>
+    </form>
+</body>
+</html>
