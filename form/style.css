@@ -29,7 +29,7 @@ body {
 
 .field {
     display: grid;
-    row-gap: .125rem;
+    row-gap: .5rem;
     align-items: center;
 }
 
@@ -58,7 +58,7 @@ body {
 
 .field__list {
     display: grid;
-    row-gap: .125rem;
+    row-gap: .75rem;
 
     list-style-type: none;
     padding-left: 0;
