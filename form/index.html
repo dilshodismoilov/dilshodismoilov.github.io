@@ -16,18 +16,22 @@
         method="POST" 
         name="https://cp.unisender.com/ru/subscribe?hash=6wojscuc76uroxtr3mprd9q3abfw77x7kfh7pxej9zrgstxzrxgco"
         class="form"
+        target="_blank"
     >
         <div class="field">
             <label for="f_1" class="field__label">Тип подписки</label>
-            <select name="f_1" id="f_1" class="select">
-                <option value="1" class="select__option">Агентство</option>
-                <option value="0" class="select__option" selected>Частное лицо</option>
-            </select>
-            <span class="select__arrow">
-                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.91016 20.8766L15.4302 14.3566C16.2002 13.5866 16.2002 12.3266 15.4302 11.5566L8.91016 5.03659" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </span>
+            <div class="select-wrapper">
+                <select name="f_1" id="f_1" class="select">
+                    <option value="1" class="select__option">Агентство</option>
+                    <option value="0" class="select__option" selected>Частное лицо</option>
+                </select>
+                <span class="select__arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.60189 8.91016L10.1219 15.4302C10.8919 16.2002 12.1519 16.2002 12.9219 15.4302L19.4419 8.91016" stroke="#292929" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                </span>
+            </div>
         </div>
         <div class="field">
             <span class="field__label field__label--required">
@@ -96,7 +100,7 @@
             <div class="field__wrapper" data-error-msg="Обязательное поле" data-js-agreement-checkbox-wrapper>
                 <label for="agreement" class="checkbox">
                     <input type="checkbox" id="agreement" class="checkbox__control" required data-js-agreement-checkbox>
-                    <span class="checkbox__label field__label--required">Я ознакомлен и согласен с правилами размещения и даю  <a href="https://www.ambotis.ru/about/politika-zashchity-i-obrabotki-personalnykh-dannykh/" class="field__link">согласие на обработку моих персональных данных</a></span>
+                    <span class="checkbox__label field__label--required">Я ознакомлен и согласен с правилами размещения и даю  <a href="https://www.ambotis.ru/about/politika-zashchity-i-obrabotki-personalnykh-dannykh/" class="field__link" target="_blank">согласие на обработку моих персональных данных</a></span>
                 </label>
             </div>
         </div>
