@@ -1,1 +1,0 @@
-Bu wordle o'yini
